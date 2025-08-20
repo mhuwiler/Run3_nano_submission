@@ -209,7 +209,7 @@ def status(card, datasets):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--user", required=True, type=str, help="username for storing files")
+    parser.add_argument("--user", required=False, default="", type=str, help="username for storing files")
     parser.add_argument(
         "--year",
         required=True,
@@ -246,6 +246,9 @@ def parse_args():
     )
     args = parser.parse_args()
 
+    if (args.user == ""): 
+        args.user = os.environ['USER'].split("-")[0]
+
     return args
 
 
@@ -277,7 +280,7 @@ def main(args):
         "crab_template": "template_crab.py",
         "workArea": f"crab/{TAG}/{dlabel}_{args.year}_{args.dataset}",
         "storageSite": "T2_CH_CSCS",
-        "outLFNDirBase": f"/store/user/mhuwiler/production/Scouting/{dlabel}_{args.year}",
+        "outLFNDirBase": f"/store/user/{user}/production/Scouting/{dlabel}_{args.year}",
         "voGroup": None,
         "publication": True,
         "config": f"configs/{CONFIGS[dlabel][args.year]}",
