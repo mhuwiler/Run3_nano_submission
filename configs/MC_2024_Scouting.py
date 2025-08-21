@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: --python_file MC_2024_Scouting.py -s NANO:@GENFromMini+@Scout --process NANO -n 10 --nThreads 4 --era Run3_2024 --customise_commands="process.NANOAODSIMoutput.outputCommands.append()" --no_exec --eventcontent NANOAODSIM --datatier NANOAODSIM --mc --fileout file:MC_2024_Scouting.py.root --conditions auto:phase1_2024_realistic --filein /store/mc/Run3Winter24MiniAOD/GluGlutoHHto2B2Tau_kl-0p00_kt-1p00_c2-0p00_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/133X_mcRun3_2024_realistic_v9-v3/2820000/6fde14c0-c8c4-4425-b57c-647f62654d98.root
+# with command line options: --python_file MC_2024_Scouting.py -s NANO:@GENFromMini+@Scout --process NANO -n 10 --nThreads 4 --era Run3_2024 --customise_commands="process.NANOAODSIMoutput.outputCommands.append()" --no_exec --eventcontent NANOAODSIM --datatier NANOAODSIM --mc --fileout file:MC_2024_Scouting.root --conditions auto:phase1_2024_realistic --filein /store/mc/Run3Winter24MiniAOD/GluGlutoHHto2B2Tau_kl-0p00_kt-1p00_c2-0p00_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/133X_mcRun3_2024_realistic_v9-v3/2820000/6fde14c0-c8c4-4425-b57c-647f62654d98.root
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run3_2024_cff import Run3_2024
@@ -81,7 +81,7 @@ process.NANOAODSIMoutput = cms.OutputModule("NanoAODOutputModule",
         dataTier = cms.untracked.string('NANOAODSIM'),
         filterName = cms.untracked.string('')
     ),
-    fileName = cms.untracked.string('file:MC_2024_Scouting.py.root'),
+    fileName = cms.untracked.string('file:MC_2024_Scouting.root'),
     outputCommands = process.NANOAODSIMEventContent.outputCommands
 )
 
