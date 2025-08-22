@@ -9,7 +9,7 @@
 
 NEVENTS=10
 NTHREADS=4
-ERA=Run3
+ERA=Run3_2024
 
 base_args="--customise DAZSLE/DAZSLE/customize.customize --step NANO:@BTV --scenario pp --customise_commands=\"process.add_(cms.Service('InitRootHandlers',EnableIMT=cms.untracked.bool(False)));process.MessageLogger.cerr.FwkReport.reportEvery=1000\" --no_exec -n $NEVENTS --nThreads $NTHREADS --era $ERA"
 mc_args="--eventcontent NANOAODSIM --datatier NANOAODSIM --mc"
@@ -60,7 +60,7 @@ cmsDriver.py $name --fileout file:$name.root --conditions $gt --filein $filein $
 
 name=MC_2024_Scouting
 gt=auto:phase1_2024_realistic
-filein=/store/mc/Run3Winter24MiniAOD/GluGlutoHHto2B2Tau_kl-0p00_kt-1p00_c2-0p00_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/133X_mcRun3_2024_realistic_v9-v3/2820000/6fde14c0-c8c4-4425-b57c-647f62654d98.root #/store/mc/Run3Winter24MiniAOD/GluGlutoHHto2B2Tau_kl-0p00_kt-1p00_c2-0p00_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/133X_mcRun3_2024_realistic_v9-v3/2820000/a55161f6-8a99-47ed-a158-063e3726e97c.root
+filein=/store/mc/RunIII2024Summer24MiniAOD/GluGluHHto2B2Tau_Par-c2-0p00-kl-0p00-kt-1p00_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/PowhegBugFix_140X_mcRun3_2024_realistic_v26-v2/2520000/f3dd2be7-c6bc-465a-8a39-d5de274617b0.root #/store/mc/Run3Winter24MiniAOD/GluGlutoHHto2B2Tau_kl-0p00_kt-1p00_c2-0p00_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/133X_mcRun3_2024_realistic_v9-v3/2820000/6fde14c0-c8c4-4425-b57c-647f62654d98.root #/store/mc/Run3Winter24MiniAOD/GluGlutoHHto2B2Tau_kl-0p00_kt-1p00_c2-0p00_TuneCP5_13p6TeV_powheg-pythia8/MINIAODSIM/133X_mcRun3_2024_realistic_v9-v3/2820000/a55161f6-8a99-47ed-a158-063e3726e97c.root
 cmsDriver.py --python_file $name.py $scouting_args_mc --fileout file:$name.root --conditions $gt --filein $filein   
 
 ############# DATA #############
